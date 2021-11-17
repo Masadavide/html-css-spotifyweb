@@ -1,7 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+svg{
+    width: 20px;
 }
 
 main{
@@ -9,6 +20,7 @@ main{
     flex-direction: row;
     width: 100vw;
     height: calc(100vh - 100px);
+    font-family: 'Roboto', sans-serif;
 }
 
 #nav{
@@ -20,28 +32,28 @@ main{
 section{
     width: calc(100% - 50px);
     height: 100%;
-    background-color: navy;
+    background-color: rgb(14,19,22);
     width: 100%;
+    position: relative;
 }
 
 footer{
     position: fixed;
     width: 100%;
     height: 100px;
-    background-color: gray;
+    background-color: rgb(28, 28, 28);
 }
 
-#nav a i{
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    margin-top: 10px;
+#nav a{
+    margin-top: 5px;
 }
+
 #nav{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
 #nav-top{
     display: flex;
     flex-direction: column;
@@ -54,17 +66,62 @@ footer{
     align-items: center;
 }
 
-.logo, .fa-user-circle{
-    margin-bottom: 10px;
-}
-
-#nav .logo a i{
-    font-size: 25px;
+#logo svg, #user{
+    margin: 10px 0;
+    width: 25px;
+    height: 25px;
 }
 
 #nav .fa-arrow-alt-circle-down{
     font-size: 10px;
 }
 
+#user{
+    border-radius: 100%;
+    background-color: grey;
+}
 
+#menu-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 50%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
+.btn{
+    margin-right: 5px;
+    border: 1px solid white;
+    border-radius: 50px;
+    padding: 10px 30px;
+    font-size: 12px;
+}
+
+nav{
+    padding-top: 100px;
+}
+
+#submenu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#submenu a{
+    margin: 15px;
+    font-size: 13px;
+}
+
+.underline{
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 2px;
+    border-bottom: 1px solid greenyellow;
+}
