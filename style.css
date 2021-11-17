@@ -33,18 +33,38 @@ footer{
 
 #nav a i{
     color: white;
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 10px;
 }
-
+#nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 #nav-top{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.logo{
+#nav-bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo, .fa-user-circle{
     margin-bottom: 10px;
 }
+
+#nav .logo a i{
+    font-size: 25px;
+}
+
+#nav .fa-arrow-alt-circle-down{
+    font-size: 10px;
+}
+
+
 
