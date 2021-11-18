@@ -6,14 +6,32 @@
 }
 
 body{
-    overflow: hidden;
-    height: 100%;
+    height: 100vh;
+    width: 100%;
+    color: grey;
+    font-family: 'Roboto', sans-serif;
 }
 
 a{
     text-decoration: none;
-    color: white;
+    color: grey;
     text-transform: uppercase;
+}
+
+a:hover{
+    color: white;
+}
+
+.foot-left a:hover{
+    text-decoration: underline;
+}
+
+i:hover{
+    color: white;
+}
+
+.fa-play-circle:hover{
+    font-size: 40px;
 }
 
 svg{
@@ -23,23 +41,25 @@ svg{
 main{
     display: flex;
     flex-direction: row;
-    width: 100vw;
-    height: calc(100vh - 100px);
-    font-family: 'Roboto', sans-serif;
+    height: calc(100% - 100px);
+    overflow: hidden;
 }
 
-#nav{
+.nav{
     width: 50px;
     height: 100%;
     background-color: black;
+    min-height: 490px;
+    padding: 5px;
 }
 
 section{
     width: calc(100% - 50px);
     height: 100%;
     background-color: rgb(14,19,22);
-    width: 100%;
     position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 footer{
@@ -49,35 +69,40 @@ footer{
     background-color: rgb(28, 28, 28);
 }
 
-#nav a{
+.none{
+    display: none;
+}
+
+.nav a{
     margin-top: 5px;
 }
 
-#nav{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-#nav-top{
+.nav-top{
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: calc(100% - 80px);
+    overflow-y: hidden;
 }
 
-#nav-bottom{
+.nav-bottom{
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 80px;
 }
 
-#logo svg, #user{
+.logo-mobile svg, #user{
     margin: 10px 0;
     width: 25px;
     height: 25px;
 }
 
-#nav .fa-arrow-alt-circle-down{
+.logo{
+    display: none;
+}
+
+.nav .fa-arrow-alt-circle-down{
     font-size: 10px;
 }
 
@@ -86,17 +111,18 @@ footer{
     background-color: grey;
 }
 
-#menu-top{
+.menu-top{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
     height: 80px;
-    width: 100%;
+    width: calc(100% - 50px);
     background-color: rgba(0, 0, 0, 50%);
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
+    z-index: 1;
 }
 
 .btn{
@@ -107,24 +133,24 @@ footer{
     font-size: 12px;
 }
 
-section{
-    overflow-y: auto;
+.btn:hover {
+    font-size: 15px;
 }
 
-nav{
+.container{
     padding-top: 80px;
     margin: 0 15px;
 }
 
-#submenu{
+.submenu{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
 }
 
-#submenu a{
+.submenu a{
     margin: 15px;
     font-size: 13px;
 }
@@ -145,6 +171,35 @@ nav{
 .block{
     width: calc(50% - 10px);
     margin-right: 10px;
+    cursor: pointer;
+}
+
+.img{
+    position: relative;
+}
+
+.opacity{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+}
+
+.hover-play i{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 50px;
+}
+
+.block:hover .hover-play i, .block:hover .opacity{
+    display: block;
 }
 
 img{
@@ -152,13 +207,12 @@ img{
 }
 
 .text{
-    color: white;
     margin: 25px 0;
+    color: white;
 }
 
 .text2{
-    color: white;
-    margin: 10px 0;
+    text-align: center;
 }
 
 .title{
@@ -167,7 +221,8 @@ img{
 }
 
 .genre{
-    text-align: center;
+    margin: 10px 0;
+    color: white;
 }
 
 .artist{
@@ -183,52 +238,55 @@ img{
     font-size: 15px;
 }
 
-#foot-left, #foot-right{
+.foot-left, .foot-right{
     width: 25%;
 }
 
-#foot-center{
+.foot-center{
     width: 50%;
 }
 
 footer{
     display: flex;
     flex-direction: row;
+    padding: 10px;
 }
 
 footer i{
     color: grey;
 }
 
-#foot-left{
+.foot-left{
     height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-#foot-l-left,
-#foot-l-center,
-#foot-l-right{
+.foot-l-left,
+.foot-l-center,
+.foot-l-right{
     width: calc(100% / 3);
 }
 
-#foot-l-left img{
+.foot-l-left img{
     padding: 10px;
 }
 
-#foot-l-center{
+.foot-l-center{
+    display: flex;
+    flex-direction: column;
     font-size: 12px;
     color: grey;
     line-height: 12px;
 }
 
-#text3{
+.text3{
     font-size: 14px;
     color: white;
 }
 
-#foot-l-right{
+.foot-l-right{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -238,11 +296,12 @@ footer i{
     margin-bottom: 5px;
 }
 
-#foot-center{
+.foot-center{
     height: 100%;
+    padding: 0 20px;
 }
 
-#foot-center i{
+.foot-center i{
     color: white;
 }
 
@@ -250,20 +309,109 @@ footer i{
     font-size: 30px;
 }
 
-#foot-c-top{
+.foot-c-top{
     height: 50%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 15px;
+}
+
+.foot-c-bottom{
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 10px;
+}
+
+footer span{
+    width: 15%;
+    text-align: center;
+}
+
+.foot-c-b-center{
+    width: 70%;
+}
+
+.player-bar{
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.gen-bar{
+    position: relative;
+    height: 100%;
+    width: 20%;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+}
+
+.player-bar:hover .gen-bar,.player-bar:hover .focus-bar{
+    background-color: greenyellow;
+}
+
+.focus-bar{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+}
+
+.foot-right{
+    display: flex;
+    flex-direction: row;
     align-items: center;
 }
 
-#foot-c-bottom{
-    height: 50%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    color: white;
-    font-size: 10px;
+.foot-right i{
+    margin-right: 10px;
+    font-size: 13px;
+}
+
+@media screen and (min-width:576px) {
+    .nav{
+        width: 250px;
+        padding: 15px;
+    }
+
+    .logo-mobile{
+        display: none;
+    }
+    
+    .logo{
+        display: block;
+    }
+
+    .logo svg{
+        width: 120px;
+    }
+
+    #home{
+        margin-top: 20px;
+    }
+
+    .nav-top{
+        align-items: flex-start;
+    }
+
+    svg{
+        vertical-align: middle;
+    }
+
+    .nav-top a{
+        text-transform: none;
+    }
+
+    .none{
+        display: inline-block;
+    }
+
 }
